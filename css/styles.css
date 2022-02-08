@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  font-family: "Gruppo", cursive;
+  font-size: large;
+}
+
+body {
+  height: 100%;
+}
+
+.hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),
+    url("../images/AdobeStock_252639284.jpeg");
+  height: 15em;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 50px;
+  text-align: center;
+  color: white;
+}
+
+h1 {
+  font-family: "Audiowide", cursive;
+  font-size: 3em;
+}
+
+.grid {
+  padding-top: 2em;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 10px;
+  /* grid-row-gap: 10px; */
+  grid-template-areas:
+    "image1 image1 image1 text1"
+    "text2 image2 image2 image2"
+    "image3 image3 image3 text3";
+  justify-items: safe;
+  justify-content: safe;
+}
+
+#foto1 {
+  grid-area: image1;
+  display: flex;
+  flex-direction: column;
+}
+
+#pie1 {
+  grid-area: text1;
+}
+
+#foto2 {
+  grid-area: image2;
+  display: flex;
+  flex-direction: column;
+}
+
+#pie2 {
+  grid-area: text2;
+}
+
+#foto3 {
+  grid-area: image3;
+  display: flex;
+  flex-direction: column;
+}
+
+#pie3 {
+  grid-area: text3;
+}
