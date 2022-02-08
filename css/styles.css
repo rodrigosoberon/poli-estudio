@@ -1,4 +1,5 @@
 * {
+  padding: 0;
   margin: 0;
   font-family: "Gruppo", cursive;
   font-size: large;
@@ -8,21 +9,69 @@ body {
   height: 100%;
 }
 
+.container {
+  display: grid;
+  grid-template-columns: 100px auto 100px;
+  /* grid-template-rows: */
+  grid-gap: 1 rem;
+  grid-template-areas: 
+  "header header header"
+  "navbar navbar navbar"
+  "section section section"
+  "aside aside aside"
+  "footer footer footer";
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  grid-area: header;
+}
+
+.nav {
+  grid-area: navbar;
+  display: flex;
+  justify-content: space-around;
+  background-color: black;
+}
+
+.nav a{
+  text-decoration: none;
+  color: white;
+  padding: 0.5rem 0;
+}
+
+.section{
+  display: flex;
+  flex-direction: row;
+  grid-area: section;
+}
+
+.aside {
+  grid-area: aside;
+}
+
+footer {
+  grid-area: footer;
+  background-color: black;
+  color: white;
+  padding: 1rem 0;
+}
+
 .hero-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),
     url("../images/AdobeStock_252639284.jpeg");
-  height: 15em;
+  /* padding-top: 3em; */
   background-position: center;
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0 50px;
   text-align: center;
   color: white;
+}
+
+.hero-text{
+  padding: 2em;
 }
 
 h1 {
@@ -30,8 +79,7 @@ h1 {
   font-size: 3em;
 }
 
-.grid {
-  padding-top: 2em;
+.imagenes {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
