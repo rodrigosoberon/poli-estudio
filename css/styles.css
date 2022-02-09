@@ -16,7 +16,7 @@
   "header header header"
   "navbar navbar navbar"
   "section section section"
-  "aside aside aside"
+  /* "aside aside aside" */ /*!no uso el aside*/
   "footer footer footer";
 }
 
@@ -135,6 +135,10 @@ img{
   grid-area: text3;
 }
 
+/* ?-----------------------------------------------------------------------------------------
+?                                           ASIDE (NO LO USO)
+?--------------------------------------------------------------------------------------------*/
+
 .aside {
   grid-area: aside;
 }
@@ -147,7 +151,7 @@ footer {
   grid-area: footer;
   background-color: black;
   color: white;
-  padding: 1em 0.5em;
+  padding: 0em 1em;
 }
 
 /* ?-----------------------------------------------------------------------------------------
