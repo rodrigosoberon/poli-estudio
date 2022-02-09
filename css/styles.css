@@ -1,3 +1,7 @@
+/* ?-----------------------------------------------------------------------------------------
+?                                           GENERAL
+?--------------------------------------------------------------------------------------------*/
+
 * {
   padding: 0;
   margin: 0;
@@ -5,15 +9,9 @@
   font-size: large;
 }
 
-body {
-  height: 100%;
-}
-
 .container {
   display: grid;
   grid-template-columns: 100px auto 100px;
-  /* grid-template-rows: */
-  grid-gap: 1 rem;
   grid-template-areas: 
   "header header header"
   "navbar navbar navbar"
@@ -22,17 +20,50 @@ body {
   "footer footer footer";
 }
 
+/* ?-----------------------------------------------------------------------------------------
+?                                           HEADER
+?--------------------------------------------------------------------------------------------*/
+
 .header {
-  display: flex;
-  flex-direction: column;
   grid-area: header;
 }
+
+.hero-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),
+    url("../images/AdobeStock_252639284.jpeg");
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  color: white;
+  min-height: 10em;
+}
+
+.hero-text{
+  padding: 1em;
+}
+
+h1 {
+  font-family: "Audiowide", cursive;
+  font-size: 3em;
+}
+
+/* ?-----------------------------------------------------------------------------------------
+?                                           NAVBAR
+?--------------------------------------------------------------------------------------------*/
 
 .nav {
   grid-area: navbar;
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
   background-color: black;
+  top: 0;
+  position: sticky;
 }
 
 .nav a{
@@ -41,56 +72,27 @@ body {
   padding: 0.5rem 0;
 }
 
+/* ?-----------------------------------------------------------------------------------------
+?                                           SECTION
+?--------------------------------------------------------------------------------------------*/
+
 .section{
   display: flex;
   flex-direction: row;
   grid-area: section;
 }
 
-.aside {
-  grid-area: aside;
-}
-
-footer {
-  grid-area: footer;
-  background-color: black;
-  color: white;
-  padding: 1rem 0;
-}
-
-.hero-image {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),
-    url("../images/AdobeStock_252639284.jpeg");
-  /* padding-top: 3em; */
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
-  text-align: center;
-  color: white;
-}
-
-.hero-text{
-  padding: 2em;
-}
-
-h1 {
-  font-family: "Audiowide", cursive;
-  font-size: 3em;
-}
-
 .imagenes {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  grid-column-gap: 10px;
-  /* grid-row-gap: 10px; */
-  grid-template-areas:
-    "image1 image1 image1 text1"
-    "text2 image2 image2 image2"
-    "image3 image3 image3 text3";
-  justify-items: safe;
-  justify-content: safe;
+  display: flex;
+  flex-direction: column;
+}
+
+img{
+  width: 100%;
+}
+
+.texto{
+  margin: 1rem;
 }
 
 #foto1 {
@@ -121,4 +123,53 @@ h1 {
 
 #pie3 {
   grid-area: text3;
+}
+
+.aside {
+  grid-area: aside;
+}
+
+/* ?-----------------------------------------------------------------------------------------
+?                                           FOOTER
+?--------------------------------------------------------------------------------------------*/
+
+footer {
+  grid-area: footer;
+  background-color: black;
+  color: white;
+  padding: 1em 0.5em;
+}
+
+/* ?-----------------------------------------------------------------------------------------
+?                                        RESPONSIVE STUFF
+?--------------------------------------------------------------------------------------------*/
+
+@media only screen and (min-width: 768px){
+  .imagenes{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+    "image1 image1 image1 text1"
+    "text2 image2 image2 image2"
+    "image3 image3 image3 text3";
+  }
+}
+
+@media only screen and (min-width: 1024px){
+  .container{
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-template-areas:
+    "navbar header header header"
+    "navbar section section section"
+    "aside aside aside aside"
+    "footer footer footer footer";
+  }
+
+  .nav{
+    flex-direction: column;
+    justify-content: start;
+  }
+
 }
