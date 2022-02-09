@@ -58,18 +58,30 @@ h1 {
 
 .nav {
   grid-area: navbar;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
   background-color: black;
   top: 0;
   position: sticky;
+
 }
 
-.nav a{
+.nav-buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.nav-buttons a{
   text-decoration: none;
+  text-align: center;
   color: white;
   padding: 0.5rem 0;
+  width: 100%;
+}
+
+.nav-buttons a:hover{
+  background-color: white;
+  color: black;
 }
 
 /* ?-----------------------------------------------------------------------------------------
@@ -167,9 +179,14 @@ footer {
     "footer footer footer footer";
   }
 
-  .nav{
+  .nav-buttons{
+    top:0;
+    position: sticky;
     flex-direction: column;
-    justify-content: start;
   }
 
+  .nav-buttons a{
+    padding: 0.5em 2em;
+    width: unset;
+  }
 }
