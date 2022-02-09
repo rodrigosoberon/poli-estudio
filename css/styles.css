@@ -59,16 +59,14 @@ h1 {
 .nav {
   grid-area: navbar;
   background-color: black;
-  top: 0;
   position: sticky;
-
+  top: 0;
 }
 
 .nav-buttons{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  width: 100%;
 }
 
 .nav-buttons a{
@@ -177,6 +175,10 @@ footer {
     "navbar section section section"
     "aside aside aside aside"
     "footer footer footer footer";
+  }
+
+  .nav{
+    position: relative;
   }
 
   .nav-buttons{
