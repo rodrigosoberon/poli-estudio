@@ -3,21 +3,26 @@
 ?--------------------------------------------------------------------------------------------*/
 
 * {
-  padding: 0;
   margin: 0;
   font-family: "Gruppo", cursive;
   font-size: large;
 }
 
-.container {
-  display: grid;
-  grid-template-columns: 100px auto 100px;
-  grid-template-areas: 
-  "header header header"
-  "navbar navbar navbar"
-  "section section section"
-  /* "aside aside aside" */ /*!no uso el aside*/
-  "footer footer footer";
+.body {
+  display: flex;
+  flex-direction: column;
+  /* display: grid;
+  grid-template-columns: auto;
+  grid-template-rows:  auto auto 100% auto;
+  grid-template-areas:
+  "header"
+  "navbar"
+  "main"
+  "footer"; */
+}
+
+#body-index{
+  height: 100vh;
 }
 
 /* ?-----------------------------------------------------------------------------------------
@@ -26,12 +31,13 @@
 
 .header {
   grid-area: header;
+  height: auto;
 }
 
 .hero-image {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),
     url("../images/AdobeStock_252639284.jpeg");
   background-position: center;
@@ -61,19 +67,21 @@ h1 {
   background-color: black;
   position: sticky;
   top: 0;
+  height: auto;
 }
 
 .nav-buttons{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  align-items: center;
 }
 
 .nav-buttons a{
   text-decoration: none;
   text-align: center;
   color: white;
-  padding: 0.5rem 0;
+  font-size: 1.3em;
   width: 100%;
 }
 
@@ -82,14 +90,37 @@ h1 {
   color: black;
 }
 
+#home{
+  max-width: 1em;
+  padding: 0 0.5em;
+}
+
+a #black{
+  display: none;
+  z-index: 99;
+}
+
+a #white{
+  display: flex;
+}
+
+a:hover #black{
+  display: flex;
+}
+
+a:hover #white{
+  display: none;
+}
+
 /* ?-----------------------------------------------------------------------------------------
-?                                           SECTION
+?                                           MAIN
 ?--------------------------------------------------------------------------------------------*/
 
-.section{
+.main{
+  grid-area: main;
   display: flex;
-  flex-direction: row;
-  grid-area: section;
+  flex-direction: column;
+  height: 100%;
 }
 
 .imagenes {
@@ -136,14 +167,6 @@ img{
 }
 
 /* ?-----------------------------------------------------------------------------------------
-?                                           ASIDE (NO LO USO)
-?--------------------------------------------------------------------------------------------*/
-
-.aside {
-  grid-area: aside;
-}
-
-/* ?-----------------------------------------------------------------------------------------
 ?                                           FOOTER
 ?--------------------------------------------------------------------------------------------*/
 
@@ -152,6 +175,7 @@ footer {
   background-color: black;
   color: white;
   padding: 0em 1em;
+  height: auto;
 }
 
 /* ?-----------------------------------------------------------------------------------------
@@ -176,8 +200,7 @@ footer {
     grid-template-columns: repeat(4, auto);
     grid-template-areas:
     "navbar header header header"
-    "navbar section section section"
-    "aside aside aside aside"
+    "navbar main main main"
     "footer footer footer footer";
   }
 
