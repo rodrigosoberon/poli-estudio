@@ -9,7 +9,7 @@ header {
   background-size: cover;
 }
 
-img.logo{
+img#logo{
   max-height: 300px;
 }
 
