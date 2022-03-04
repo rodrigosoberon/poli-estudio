@@ -1,221 +1,68 @@
-/* ?-----------------------------------------------------------------------------------------
-?                                           GENERAL
-?--------------------------------------------------------------------------------------------*/
-
 * {
-  margin: 0;
-  font-family: "Gruppo", cursive;
-  font-size: large;
+  font-family: "Raleway", sans-serif;
 }
 
-.body {
-  display: flex;
-  flex-direction: column;
-  /* display: grid;
-  grid-template-columns: auto;
-  grid-template-rows:  auto auto 100% auto;
-  grid-template-areas:
-  "header"
-  "navbar"
-  "main"
-  "footer"; */
-}
-
-#body-index{
-  height: 100vh;
-}
-
-/* ?-----------------------------------------------------------------------------------------
-?                                           HEADER
-?--------------------------------------------------------------------------------------------*/
-
-.header {
-  grid-area: header;
-  height: auto;
-}
-
-.hero-image {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),
-    url("../images/AdobeStock_252639284.jpeg");
+header {
+  background-image: url("../images/AdobeStock_252639284.jpeg");
   background-position: center;
-  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+img.logo{
+  max-height: 300px;
+}
+
+blockquote {
+  background-color: #00000050;
+}
+
+@media (max-width: 600px) {
+  .carousel {
+    display: none;
+  }
+}
+
+.card {
+  border: none;
+  background: #e0e0e0;
+  box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff;
+}
+
+button.mi-boton {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: rgb(66, 66, 66);
+  border: none;
+  color: #ffffff;
   text-align: center;
-  color: white;
-  min-height: 10em;
+  padding: 0.5em 0;
+  width: 130px;
+  transition: all 0.5s;
+  cursor: pointer;
 }
 
-.hero-text{
-  padding: 1em;
+button.mi-boton span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
 }
 
-h1 {
-  font-family: "Audiowide", cursive;
-  font-size: 3em;
-}
-
-/* ?-----------------------------------------------------------------------------------------
-?                                           NAVBAR
-?--------------------------------------------------------------------------------------------*/
-
-.nav {
-  grid-area: navbar;
-  background-color: black;
-  position: sticky;
+button.mi-boton span:after {
+  content: "»";
+  position: absolute;
+  opacity: 0;
   top: 0;
-  height: auto;
+  right: -15px;
+  transition: 0.5s;
 }
 
-.nav-buttons{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
+button.mi-boton:hover span {
+  padding-right: 15px;
 }
 
-.nav-buttons a{
-  text-decoration: none;
-  text-align: center;
-  color: white;
-  font-size: 1.3em;
-  width: 100%;
-}
-
-.nav-buttons a:hover{
-  background-color: white;
-  color: black;
-}
-
-#home{
-  max-width: 1em;
-  padding: 0 0.5em;
-}
-
-a #black{
-  display: none;
-  z-index: 99;
-}
-
-a #white{
-  display: flex;
-}
-
-a:hover #black{
-  display: flex;
-}
-
-a:hover #white{
-  display: none;
-}
-
-/* ?-----------------------------------------------------------------------------------------
-?                                           MAIN
-?--------------------------------------------------------------------------------------------*/
-
-.main{
-  grid-area: main;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.imagenes {
-  display: flex;
-  flex-direction: column;
-}
-
-img{
-  width: 100%;
-}
-
-.texto{
-  margin: 1rem;
-}
-
-#foto1 {
-  grid-area: image1;
-  display: flex;
-  flex-direction: column;
-}
-
-#pie1 {
-  grid-area: text1;
-}
-
-#foto2 {
-  grid-area: image2;
-  display: flex;
-  flex-direction: column;
-}
-
-#pie2 {
-  grid-area: text2;
-}
-
-#foto3 {
-  grid-area: image3;
-  display: flex;
-  flex-direction: column;
-}
-
-#pie3 {
-  grid-area: text3;
-}
-
-/* ?-----------------------------------------------------------------------------------------
-?                                           FOOTER
-?--------------------------------------------------------------------------------------------*/
-
-footer {
-  grid-area: footer;
-  background-color: black;
-  color: white;
-  padding: 0em 1em;
-  height: auto;
-}
-
-/* ?-----------------------------------------------------------------------------------------
-?                                        RESPONSIVE STUFF
-?--------------------------------------------------------------------------------------------*/
-
-@media only screen and (min-width: 768px){
-  .imagenes{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-areas:
-    "image1 image1 image1 text1"
-    "text2 image2 image2 image2"
-    "image3 image3 image3 text3";
-  }
-}
-
-@media only screen and (min-width: 1024px){
-  .container{
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-    grid-template-areas:
-    "navbar header header header"
-    "navbar main main main"
-    "footer footer footer footer";
-  }
-
-  .nav{
-    position: relative;
-  }
-
-  .nav-buttons{
-    top:0;
-    position: sticky;
-    flex-direction: column;
-  }
-
-  .nav-buttons a{
-    padding: 0.5em 2em;
-    width: unset;
-  }
+button.mi-boton:hover span:after {
+  opacity: 1;
+  right: 0;
 }
