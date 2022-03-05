@@ -1,5 +1,9 @@
+:root{
+  --color-dark: rgb(44, 44, 44);
+}
+
 * {
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 header {
@@ -10,11 +14,16 @@ header {
 }
 
 img#logo{
-  max-height: 300px;
+  max-height: 150px;
 }
 
 blockquote {
-  background-color: #00000050;
+  background-color: #00000060;
+  border-radius: 5px;
+}
+
+nav{
+  background-color: var(--color-dark);
 }
 
 @media (max-width: 600px) {
@@ -32,7 +41,7 @@ blockquote {
 button.mi-boton {
   display: inline-block;
   border-radius: 4px;
-  background-color: rgb(66, 66, 66);
+  background-color: var(--color-dark);
   border: none;
   color: #ffffff;
   text-align: center;
