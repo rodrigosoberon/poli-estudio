@@ -1,6 +1,8 @@
 let slideIndex = 0;
+
 showSlides();
 
+// * Función para slideShow
 function showSlides() {
   let i;
   let slides = document.getElementsByClassName("mySlides");
@@ -12,19 +14,16 @@ function showSlides() {
     slideIndex = 1;
   }
   slides[slideIndex - 1].style.display = "block";
-  setTimeout(showSlides, 5000); // Change image every 2 seconds
+  setTimeout(showSlides, 3000); //? Ajustar tiempo de slideShow
 }
 
-/* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
+// * Navbar vertical
 function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
-//   document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("mySidenav").style.width = "250px"; //? Ancho del navbar
   document.getElementById("icono-menu").style.display = "none";
 }
 
-/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
-//   document.getElementById("main").style.marginLeft = "0";
   document.getElementById("icono-menu").style.display = "block";
 }
