@@ -80,10 +80,10 @@
 
 /* *MAIN */
 
-/* html{
-  ! sticky scroll
+html {
+  /* ! sticky scroll */
   scroll-snap-type: y mandatory;
-} */
+}
 
 .logo {
   width: 50px;
@@ -103,11 +103,6 @@ section {
 
 /* *SLIDESHOW */
 
-section div {
-  height: 100vh;
-  width: 100vw;
-}
-
 section div img {
   object-fit: cover;
   max-height: 100vh;
@@ -115,11 +110,14 @@ section div img {
   width: 100%;
 }
 
-.mySlides {
+.slideshow__slide {
   display: none;
+  height: 100vh;
+  width: 100vw;
 }
 
-.text {
+/* ? clase para texto de slide */
+/* .text {
   color: #fff;
   font-size: 3vw;
   padding: 8px 12px;
@@ -128,7 +126,7 @@ section div img {
   top: 90vh;
   width: 100%;
   text-align: center;
-}
+} */
 
 .fade {
   animation-name: fade;
@@ -146,27 +144,30 @@ section div img {
 
 /* *OTRAS SECCIONES */
 
-section div video {
+.video-full {
   object-fit: cover;
   max-height: 100vh;
   height: 100%;
   width: 100%;
 }
 
-.con-texto {
+.imagen-texto {
   height: 100vh;
+  display: flex;
 }
 
-.frase {
-  padding: 10vw 4vh;
+.imagen-texto__frase {
+  width: 50%;
+  font-style: italic;
+  padding: 0 5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4vh;
+  text-align: center;
 }
-
-.frase q {
-  font-size: 3vh;
-}
-
-.frase p {
-  font-size: 2vw;
+.imagen-texto__render {
+  padding: 5em;
 }
 
 .fondo-fijo {

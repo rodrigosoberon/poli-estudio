@@ -5,7 +5,7 @@ showSlides();
 // * Función para slideShow
 function showSlides() {
   let i;
-  let slides = document.getElementsByClassName("mySlides");
+  let slides = document.getElementsByClassName("slideshow__slide");
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
