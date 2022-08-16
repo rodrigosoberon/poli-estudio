@@ -114,12 +114,6 @@ section div img {
   height: 100%;
   width: 100%;
 }
-section div video {
-  object-fit: cover;
-  max-height: 100vh;
-  height: 100%;
-  width: 100%;
-}
 
 .mySlides {
   display: none;
@@ -151,6 +145,13 @@ section div video {
 }
 
 /* *OTRAS SECCIONES */
+
+section div video {
+  object-fit: cover;
+  max-height: 100vh;
+  height: 100%;
+  width: 100%;
+}
 
 .con-texto {
   height: 100vh;
