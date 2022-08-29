@@ -80,10 +80,10 @@
 
 /* *MAIN */
 
-html {
-  /* ! sticky scroll */
-  scroll-snap-type: y mandatory;
-}
+/* html { */
+/* ! sticky scroll */
+/* scroll-snap-type: y mandatory; */
+/* } */
 
 .logo {
   width: 50px;
@@ -189,11 +189,11 @@ section div img {
 
 .galeria {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
 }
 
 div.gallery {
-  margin: 5px;
+  margin: 1em;
   border: 1px solid #ccc;
   float: left;
   width: auto;
